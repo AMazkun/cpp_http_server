@@ -17,3 +17,8 @@ set(SOURCES
 
 # Add the executable
 add_executable(http_server ${SOURCES})
+
+# Link against necessary libraries
+target_link_libraries(http_server
+    -lpthread
+)
