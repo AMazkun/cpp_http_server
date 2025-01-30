@@ -1,5 +1,8 @@
 # Simplest Multithread REST-like API (over TCP)
 This repository contains a simple example of a multithreaded REST-like API server implemented in C++. It uses TCP sockets for communication and provides basic GET and POST request handling.  This is a simplified example for educational purposes and demonstrates core concepts.
+|                                        |                                        |                                        |
+|:--------------------------------------:|:--------------------------------------:|:--------------------------------------:|
+|![unnamed](https://github.com/user-attachments/assets/e3fc0b85-0817-49c3-af4e-c4c1b11cfb75)|![unnamed](https://github.com/user-attachments/assets/e3fc0b85-0817-49c3-af4e-c4c1b11cfb75)|![unnamed](https://github.com/user-attachments/assets/e3fc0b85-0817-49c3-af4e-c4c1b11cfb75)|
 
 ## Features
 
