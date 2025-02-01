@@ -38,7 +38,7 @@ This project implements a basic multithreaded REST-like API server in C++ over T
 * CMake (optional)
 * OpenSSL library (required for the HTTPS server)
 
-## HTTPS Server
+## HTTP Server
 The HTTP server provides unencrypted communication.  It's simpler to set up and is suitable for development or situations where security is not a primary concern.
 
 ### Features
@@ -47,9 +47,6 @@ The HTTP server provides unencrypted communication.  It's simpler to set up and 
 3. Basic string and data processing
 4. JSON response example
 
-### Prerequisites
-- C++ compiler
-- CMake (optional)
 
 ## HTTPS Server
 The HTTPS server example in the directory HTTPS builds upon the HTTP server by adding support for SSL/TLS encryption using OpenSSL. This ensures secure communication between clients and the server.
@@ -63,12 +60,12 @@ Here's how to generate a self-signed certificate using OpenSSL:
 openssl req -x509 -newkey rsa:4096 -nodes -keyout server.key -out server.crt -days 365
 ```
 Manually Generate a Certificate Signing Request (CSR) Using OpenSSL - SSL.com
--x509: This option tells OpenSSL to create a self-signed certificate (instead of a certificate signing request).
--newkey rsa:4096: This generates a new RSA key with a 4096-bit key size (you can adjust this). The key is stored in server.key.
--nodes: This option tells OpenSSL not to encrypt the private key (for simplicity in this example). In production, you should always encrypt your private key.
--keyout server.key: Specifies the filename for the private key.
--out server.crt: Specifies the filename for the certificate.
--days 365: Specifies the validity period of the certificate (365 days in this example).
+- x509: This option tells OpenSSL to create a self-signed certificate (instead of a certificate signing request).
+- newkey rsa:4096: This generates a new RSA key with a 4096-bit key size (you can adjust this). The key is stored in server.key.
+- nodes: This option tells OpenSSL not to encrypt the private key (for simplicity in this example). In production, you should always encrypt your private key.
+- keyout server.key: Specifies the filename for the private key.
+- out server.crt: Specifies the filename for the certificate.
+- days 365: Specifies the validity period of the certificate (365 days in this example).
 You'll be prompted to enter information about the certificate (e.g., country, organization, common name).  The "Common Name" is important; it should match the hostname or IP address of your server.
 
 Important:  These server.key and server.crt files will be used by your HTTPS server.  Make sure the server code is configured to load these files.  The example code in this repository assumes the key and certificate files are named server.key and server.crt and are located in the same directory as the executable.  You may need to adjust the paths in the code if your files are in a different location.
@@ -94,33 +91,33 @@ For production use, you must obtain certificates from a trusted Certificate Auth
 
 # Usage
 To start the servers, run the following command in the build directory:
-
+```
 bash
 ./http_server
 ./https_server_main
-
+```
 The server will start listening on port 8080 or 8443.
 
 # Endpoints
 
-### GET /add/<a>/<b>
+### GET /add/a/b
 Adds two numbers. Example:
 
 http://localhost:8080/add/5/10
 
-### GET /hello/<number>
+### GET /hello/number
 Returns a message based on the number of beers. Example:
 http://localhost:8080/hello/5
 
 ### GET /json
 Returns a JSON response. Example:
 
-http://localhost:8080/json
+http(s)://localhost:8080/json
 
 ### GET / or /help
 Lists available endpoints. Example:
 
-http://localhost:8080/
+http(s)://localhost:8080/
 
 ### GET /stop
 Stops server remotely. Example:
