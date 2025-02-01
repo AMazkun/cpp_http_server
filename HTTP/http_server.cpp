@@ -8,116 +8,14 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <arpa/inet.h>
-#include <regex>
 
-#include "thread_pools.hpp"
+#include "../common/thread_pools.hpp"
+#include "../common/parsing.hpp"
+#include "../common/handlers_http.hpp"
 
 #define MAX_THREADS 5 // Maximum number of worker threads
 #define PORT 8080
 #define BUFFER_SIZE 4096
-
-// Convert a string to lowercase
-std::string str_tolower(std::string s)
-{
-    std::transform(s.begin(), s.end(), s.begin(), ::tolower);
-    return s;
-}
-
-// Check if a string is not blank
-bool not_blank(const std::string &s)
-{
-    return s.find_first_not_of(' ') != std::string::npos;
-}
-
-// Split string by delimiters
-std::vector<std::string> split(const std::string &s)
-{
-    std::regex re("(GET|POST|/| |add|HTTP)");
-    std::sregex_token_iterator iter(s.begin(), s.end(), re, {-1, 0});
-    std::sregex_token_iterator end;
-
-    std::vector<std::string> tokens;
-    while (iter != end)
-    {
-        if (not_blank(*iter) && *iter != "/")
-            tokens.push_back(str_tolower(*iter));
-        iter++;
-    }
-    return tokens;
-}
-
-const std::string NOT_IMPLEMENTED = "HTTP/1.1 501 Not Implemented\r\nContent-Type: text/html\r\n\r\n<html><body><h1>501 Not Implemented</h1></body></html>";
-const std::string RESPONSE_STUB = "HTTP/1.1 200 OK\r\nContent-Type: text/plain\r\n\r\n";
-
-// Handle GET requests
-std::string GET_handler(const std::vector<std::string> &request)
-{
-    const std::string &cmd = request[1];
-    if (cmd == "add")
-    {
-        int sum = 0;
-        try
-        {
-            sum += std::stoi(request[2]);
-            sum += std::stoi(request[3]);
-        }
-        catch (const std::exception &e)
-        {
-            return RESPONSE_STUB + e.what();
-        }
-        return request[2] + " + " + request[3] + " = " + std::to_string(sum);
-    }
-    else if (cmd == "hello")
-    {
-        int beer = 0;
-        try
-        {
-            beer = std::stoi(request[2]);
-            if (0 < beer && beer < 24)
-            {
-                return "Beer delivery of " + std::to_string(beer) + " bottle(s)";
-            }
-        }
-        catch (const std::exception &e)
-        {
-            return RESPONSE_STUB + "Hello world!";
-        }
-        return "Unsuccessful application.";
-    }
-    else if (cmd == "stop")
-    {
-        return "";
-    }
-    else if (cmd == "json")
-    {
-        // Example data handling (replace with your logic)
-        return "HTTP/1.1 200 OK\r\nContent-Type: application/json\r\n\r\n{\"name\": \"Example Data\", \"value\": 42}";
-    }
-    else if (cmd == "http" || cmd == "help")
-    {
-        // Example data handling (replace with your logic)
-        return RESPONSE_STUB + "Endpoints:\n\t/hello\n\t/hello/<number>\n\t/data - POST {\"name\":\"Bilya\",\"age\":24}\n\t/lucky\n\t/json\n\t/add/<a>/<b>\n\t/stop";
-    }
-    return NOT_IMPLEMENTED;
-}
-
-// Handle POST requests
-std::string POST_handler(const std::vector<std::string> &request)
-{
-    const std::string &cmd = request[1];
-    if (cmd == "data")
-    {
-        // Example POST handling (extract data from request body - more complex in real app)
-        // curl -d '{"name":"Bilya","age":24}' {ip}:8080/data
-        std::string response = RESPONSE_STUB;
-        for (const auto &item : request)
-        {
-            response += item + "\n";
-        }
-        return RESPONSE_STUB + "Data Received (Simplified)\n" + response;
-    }
-    return NOT_IMPLEMENTED;
-}
 
 // Function to handle a single client connection
 void handle_client(int client_socket, int server_socket)
