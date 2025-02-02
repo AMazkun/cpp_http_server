@@ -243,6 +243,7 @@ void HTTPS_SERVER::log_request_response(const SSL *ssl, const std::string &reque
 
     auto end_time = std::chrono::high_resolution_clock::now(); // End time for response time calculation
     double response_time = std::chrono::duration<double, std::milli>(end_time - start_time).count();
+    auto t_stamp = time_stamp(); // get once for speed
 
     // Lock the mutex before writing to the log file
     std::lock_guard<std::mutex> guard(log_mutex);
@@ -258,7 +259,7 @@ void HTTPS_SERVER::log_request_response(const SSL *ssl, const std::string &reque
         log_file_name << log_file_base << "/server_log_" << std::setw(3) << std::setfill('0') << log_file_index << ".txt";
         if ((log_file = new std::ofstream(log_file_name.str(), std::ios_base::app)) == nullptr)
         { // Open log file in append mode
-            perror((time_stamp() + "Log file fatal: not created").c_str());
+            perror((t_stamp + "Log file fatal: not created").c_str());
             return;
         }
     }
@@ -270,13 +271,13 @@ void HTTPS_SERVER::log_request_response(const SSL *ssl, const std::string &reque
     std::string client_ip = inet_ntoa(addr.sin_addr);
     int client_port = ntohs(addr.sin_port);
 
-    *log_file << time_stamp() << " Client IP: " << client_ip << " port: " << client_port << " status: " << response_status << " time: " << response_time << " ms" << std::endl;
+    *log_file << t_stamp << " Client " << client_ip << ":" << client_port << " status: " << response_status << " duration: " << response_time << " ms" << std::endl;
 
     auto ss = std::stringstream{request};
     int i = 0;
     for (std::string line; std::getline(ss, line) && i < 6; i++)
     {
         // request an user agent
-        *log_file << time_stamp() << '\t' << line << std::endl;
+        *log_file << t_stamp << '\t' << line << std::endl;
     }
 }
