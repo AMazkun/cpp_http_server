@@ -17,11 +17,8 @@ void signal_handler(int signum)
     }
 }
 
-int main(int argc, char *argv[])
+int signal_handler_setup()
 {
-    int state = 0;
-    std::cout << time_stamp() << " UTC time mentioned further. Server initializing." << std::endl; // Server initialization message
-
     // Set up signal handler for Ctrl+C
     struct sigaction sa;
     sa.sa_handler = signal_handler;
@@ -29,9 +26,18 @@ int main(int argc, char *argv[])
     sa.sa_flags = 0;
     if (sigaction(SIGINT, &sa, NULL) == -1)
     {
-        perror((time_stamp() + " Signal action").c_str()); // Print error if setting up signal handler fails
-        return 1;                                          // Exit with error code
+        perror((time_stamp() + " Set signal action failed.").c_str()); // Print error if setting up signal handler fails
+        return 1;                                                      // Exit with error code
     }
+    return 0;
+}
+
+int main(int argc, char *argv[])
+{
+    int state = 0;
+    std::cout << time_stamp() << " UTC time mentioned further. Server initializing." << std::endl; // Server initialization message
+    if ((state = signal_handler_setup()) != 0)
+        return state;
 
     auto server = new HTTPS_SERVER(PORT, MAX_THREADS, std::filesystem::current_path()); // Create a new HTTPS server instance
 
