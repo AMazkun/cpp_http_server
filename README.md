@@ -30,6 +30,7 @@ This project implements a basic multithreaded REST-like API server in C++ over T
 * **Error Handling:** Basic error handling for invalid requests and data conversion issues.
 * **Clear and Concise Code:** The code is designed for educational purposes and emphasizes clarity and ease of understanding.
 * **HTTP and HTTPS:**  Implements both HTTP (unencrypted) and HTTPS (encrypted) servers.
+* **HTTPS:**  Log requests into files, files spleed if exided max size.
 
 ## Getting Started
 
@@ -79,6 +80,7 @@ For production use, you must obtain certificates from a trusted Certificate Auth
 3. Basic REST-like API: Supports GET and POST requests with simple routing based on URL paths.
 4. Simple Request Parsing: Parses incoming requests to identify the HTTP method and requested resource.
 5. Example Handlers: Includes example handlers for GET requests and POST requests.
+6. Log requests into files, files spleed if exided max size.
 
 ## Prerequisites
 - C++ compiler
