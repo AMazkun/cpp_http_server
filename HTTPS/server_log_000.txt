@@ -1,0 +1,91 @@
+[2025-02-02 01:23:24.025] Client IP: 127.0.0.1 port: 55022 status: 200 time: 0.087042 ms
+[2025-02-02 01:23:24.025]	GET /hello/9 HTTP/1.1
+[2025-02-02 01:23:24.025]	Host: localhost:8443
+[2025-02-02 01:23:24.025]	User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:134.0) Gecko/20100101 Firefox/134.0
+[2025-02-02 01:23:24.025]	Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[2025-02-02 01:23:24.025]	Accept-Language: ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+[2025-02-02 01:23:24.025]	Accept-Encoding: gzip, deflate, br, zstd
+[2025-02-02 01:23:29.189] Client IP: 127.0.0.1 port: 55026 status: 200 time: 0.069167 ms
+[2025-02-02 01:23:29.189]	GET /hello/5 HTTP/1.1
+[2025-02-02 01:23:29.189]	Host: localhost:8443
+[2025-02-02 01:23:29.190]	User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:134.0) Gecko/20100101 Firefox/134.0
+[2025-02-02 01:23:29.190]	Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[2025-02-02 01:23:29.190]	Accept-Language: ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+[2025-02-02 01:23:29.190]	Accept-Encoding: gzip, deflate, br, zstd
+[2025-02-02 01:23:36.168] Client IP: 127.0.0.1 port: 55029 status: 200 time: 0.079291 ms
+[2025-02-02 01:23:36.168]	GET /hello/13 HTTP/1.1
+[2025-02-02 01:23:36.168]	Host: localhost:8443
+[2025-02-02 01:23:36.169]	User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:134.0) Gecko/20100101 Firefox/134.0
+[2025-02-02 01:23:36.169]	Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[2025-02-02 01:23:36.169]	Accept-Language: ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+[2025-02-02 01:23:36.169]	Accept-Encoding: gzip, deflate, br, zstd
+[2025-02-02 01:23:41.001] Client IP: 127.0.0.1 port: 55032 status: 200 time: 0.228084 ms
+[2025-02-02 01:23:41.001]	GET /hello/45 HTTP/1.1
+[2025-02-02 01:23:41.001]	Host: localhost:8443
+[2025-02-02 01:23:41.001]	User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:134.0) Gecko/20100101 Firefox/134.0
+[2025-02-02 01:23:41.001]	Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[2025-02-02 01:23:41.001]	Accept-Language: ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+[2025-02-02 01:23:41.001]	Accept-Encoding: gzip, deflate, br, zstd
+[2025-02-02 01:23:47.040] Client IP: 127.0.0.1 port: 55044 status: 200 time: 0.137 ms
+[2025-02-02 01:23:47.040]	GET / HTTP/1.1
+[2025-02-02 01:23:47.040]	Host: localhost:8443
+[2025-02-02 01:23:47.040]	Connection: keep-alive
+[2025-02-02 01:23:47.040]	sec-ch-ua: "Not A(Brand";v="8", "Chromium";v="132", "Microsoft Edge";v="132"
+[2025-02-02 01:23:47.040]	sec-ch-ua-mobile: ?0
+[2025-02-02 01:23:47.040]	sec-ch-ua-platform: "macOS"
+[2025-02-02 01:23:47.069] Client IP: 127.0.0.1 port: 55048 status: 200 time: 0.047791 ms
+[2025-02-02 01:23:47.069]	GET /favicon.ico HTTP/1.1
+[2025-02-02 01:23:47.069]	Host: localhost:8443
+[2025-02-02 01:23:47.069]	Connection: keep-alive
+[2025-02-02 01:23:47.069]	sec-ch-ua-platform: "macOS"
+[2025-02-02 01:23:47.069]	User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36 Edg/132.0.0.0
+[2025-02-02 01:23:47.069]	sec-ch-ua: "Not A(Brand";v="8", "Chromium";v="132", "Microsoft Edge";v="132"
+[2025-02-02 01:23:53.807] Client IP: 127.0.0.1 port: 55060 status: 200 time: 0.080084 ms
+[2025-02-02 01:23:53.807]	GET /json HTTP/1.1
+[2025-02-02 01:23:53.807]	Host: localhost:8443
+[2025-02-02 01:23:53.807]	Connection: keep-alive
+[2025-02-02 01:23:53.807]	sec-ch-ua: "Not A(Brand";v="8", "Chromium";v="132", "Microsoft Edge";v="132"
+[2025-02-02 01:23:53.807]	sec-ch-ua-mobile: ?0
+[2025-02-02 01:23:53.807]	sec-ch-ua-platform: "macOS"
+[2025-02-02 01:23:53.840] Client IP: 127.0.0.1 port: 55064 status: 200 time: 0.046833 ms
+[2025-02-02 01:23:53.840]	GET /favicon.ico HTTP/1.1
+[2025-02-02 01:23:53.840]	Host: localhost:8443
+[2025-02-02 01:23:53.840]	Connection: keep-alive
+[2025-02-02 01:23:53.840]	sec-ch-ua-platform: "macOS"
+[2025-02-02 01:23:53.840]	User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36 Edg/132.0.0.0
+[2025-02-02 01:23:53.840]	sec-ch-ua: "Not A(Brand";v="8", "Chromium";v="132", "Microsoft Edge";v="132"
+[2025-02-02 01:23:59.785] Client IP: 127.0.0.1 port: 55072 status: 200 time: 0.081291 ms
+[2025-02-02 01:23:59.785]	GET /hello/5 HTTP/1.1
+[2025-02-02 01:23:59.785]	Host: localhost:8443
+[2025-02-02 01:23:59.785]	Connection: keep-alive
+[2025-02-02 01:23:59.785]	Cache-Control: max-age=0
+[2025-02-02 01:23:59.786]	sec-ch-ua: "Not A(Brand";v="8", "Chromium";v="132", "Google Chrome";v="132"
+[2025-02-02 01:23:59.786]	sec-ch-ua-mobile: ?0
+[2025-02-02 01:23:59.811] Client IP: 127.0.0.1 port: 55076 status: 200 time: 0.033875 ms
+[2025-02-02 01:23:59.811]	GET /favicon.ico HTTP/1.1
+[2025-02-02 01:23:59.811]	Host: localhost:8443
+[2025-02-02 01:23:59.811]	Connection: keep-alive
+[2025-02-02 01:23:59.811]	sec-ch-ua-platform: "macOS"
+[2025-02-02 01:23:59.811]	User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+[2025-02-02 01:23:59.811]	sec-ch-ua: "Not A(Brand";v="8", "Chromium";v="132", "Google Chrome";v="132"
+[2025-02-02 01:24:01.760] Client IP: 127.0.0.1 port: 55084 status: 200 time: 0.065084 ms
+[2025-02-02 01:24:01.761]	GET /help HTTP/1.1
+[2025-02-02 01:24:01.761]	Host: localhost:8443
+[2025-02-02 01:24:01.761]	Connection: keep-alive
+[2025-02-02 01:24:01.761]	Cache-Control: max-age=0
+[2025-02-02 01:24:01.761]	sec-ch-ua: "Not A(Brand";v="8", "Chromium";v="132", "Google Chrome";v="132"
+[2025-02-02 01:24:01.761]	sec-ch-ua-mobile: ?0
+[2025-02-02 01:24:01.794] Client IP: 127.0.0.1 port: 55088 status: 200 time: 0.067917 ms
+[2025-02-02 01:24:01.794]	GET /favicon.ico HTTP/1.1
+[2025-02-02 01:24:01.794]	Host: localhost:8443
+[2025-02-02 01:24:01.794]	Connection: keep-alive
+[2025-02-02 01:24:01.794]	sec-ch-ua-platform: "macOS"
+[2025-02-02 01:24:01.794]	User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36
+[2025-02-02 01:24:01.794]	sec-ch-ua: "Not A(Brand";v="8", "Chromium";v="132", "Google Chrome";v="132"
+[2025-02-02 01:24:18.912] Client IP: 127.0.0.1 port: 55097 status: 200 time: 0.010625 ms
+[2025-02-02 01:24:18.913]	GET /stop HTTP/1.1
+[2025-02-02 01:24:18.913]	Host: localhost:8443
+[2025-02-02 01:24:18.913]	User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:134.0) Gecko/20100101 Firefox/134.0
+[2025-02-02 01:24:18.913]	Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+[2025-02-02 01:24:18.914]	Accept-Language: ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3
+[2025-02-02 01:24:18.914]	Accept-Encoding: gzip, deflate, br, zstd

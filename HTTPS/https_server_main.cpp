@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <csignal> // For signal handling
+#include <filesystem>
 
 #include "https_server.hpp"
 
@@ -32,7 +33,7 @@ int main(int argc, char *argv[])
         return 1;                                          // Exit with error code
     }
 
-    auto server = new HTTPS_SERVER(PORT, MAX_THREADS); // Create a new HTTPS server instance
+    auto server = new HTTPS_SERVER(PORT, MAX_THREADS, std::filesystem::current_path()); // Create a new HTTPS server instance
 
     if ((state = server->open()) == 0)
         server->run(); // Start the server if it opens successfully
